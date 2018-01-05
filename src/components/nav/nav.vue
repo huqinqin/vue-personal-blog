@@ -1,7 +1,7 @@
 <template>
    <div class="nav">
      <ul class="navSty">
-       <li class="web">
+       <li class="web1">
          <router-link to="/web">前端</router-link>
        </li>
        <li class="aboutme">

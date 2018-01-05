@@ -44,10 +44,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
     before(apiRouter){
       apiRouter.get('/api/webs',(req,res)=>{
-         res.json({
-           code:0,
-           data:web
-         })
+          res.json({
+            code:0,
+            data:web
+          })
       })
     }
   },

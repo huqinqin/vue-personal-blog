@@ -1,10 +1,10 @@
 <template>
-   <div class="head">
+   <div class="head" ref="head">
      <div class="word">
        <p>我在冰封的深海，寻找希望的缺口</p>
        <p>却在午夜惊醒时，瞥见绝美的月光。</p>
      </div>
-     <div class="icon" @click="translated">
+     <div class="icon" @click.stop.prevent="translated">
        <span class="icon-nav"></span>
      </div>
    </div>
@@ -13,14 +13,14 @@
    export default{
        data(){
           return{
-              show:false
+              show:false,
           }
        },
        methods:{
          translated(){
             this.show = !this.show
             this.$emit("translated",this.show);
-         }
+         },
        }
    }
 </script>
@@ -45,7 +45,7 @@
      width 30px
      height 30px
      position fixed
-     left 90%
+     left 85%
      top 2%
      display: flex
      align-items: center

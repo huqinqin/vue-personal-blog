@@ -1,18 +1,23 @@
 <template>
-  <transition name="article">
-    <div class="article" v-show="article">
-      <div class="title">{{article.title}}</div>
-      <div class="author">
-        <span class="authors icon-center"><span>{{article.author}}</span></span>
-        <span class="time icon-data"><span>{{article.time}}</span></span>
-        <span class="classify icon-rate"><span></span></span>
+    <transition name="article">
+      <div class="article" v-show="article">
+        <scroll>
+          <div>
+            <div class="title">{{article.title}}</div>
+            <div class="author">
+              <span class="authors icon-center"><span>huqin</span></span>
+              <span class="time icon-data"><span>{{article.time}}</span></span>
+              <span class="classify icon-rate"><span></span></span>
+            </div>
+            <div class="content" v-html="article.content"></div>
+            <div class="icon icon-left" @click="back"></div>
+          </div>
+        </scroll>
       </div>
-      <div class="content">{{article.content}}</div>
-      <div class="icon icon-left" @click="back"></div>
-    </div>
-  </transition>
+    </transition>
 </template>
 <script type="text/ecmascript-6">
+  import scroll from 'base/scroll/scroll'
   export default{
       props:{
         article:{
@@ -22,19 +27,21 @@
       },
       methods:{
           back(){
-              this.$router.push({
-                path:"/web"
-              })
+              this.$router.back(-1);
           }
-      }
+      },
+    components:{
+      scroll
+    }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .article
     position fixed
     z-index 3
-    height 100%
     width 100%
+    height 100%
+    min-height 100%
     top 0
     background-color #adcc8a
     &.article-enter-active,&.article-leave-active
