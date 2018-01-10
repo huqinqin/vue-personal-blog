@@ -5,10 +5,15 @@ import App from './App'
 import router from './router'
 import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueLazyload from 'vue-lazyload'
 Vue.config.productionTip = false
 fastclick.attach(document.body);
 import 'swiper/dist/css/swiper.css'
-Vue.use(VueAwesomeSwiper)
+Vue.use(VueAwesomeSwiper);
+Vue.use(VueLazyload, {
+  loading:require("common/img/green1.jpg")
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

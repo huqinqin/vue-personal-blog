@@ -1,5 +1,5 @@
 <template>
-    <div class="scroll" ref="scroll">
+    <div ref="scroll">
       <slot></slot>
     </div>
 </template>
@@ -54,10 +54,14 @@
           setTimeout(()=>{
               this._initScroll();
           },20)
+    },
+    watch:{
+      data(){
+        setTimeout(()=>{
+          this.refresh();
+        },20)
+      }
     }
   }
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
-   .scroll
-     height 100%
-</style>
+<style lang="stylus" rel="stylesheet/stylus"></style>

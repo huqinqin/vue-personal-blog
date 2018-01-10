@@ -27,10 +27,9 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .head
     position relative
-    z-index 1
     width 100%
     height 0
-    padding-top 40%
+    padding-top 70px
     background url("./bg.jpg") no-repeat;
     background-size cover
     background-color yellow

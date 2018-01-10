@@ -26,6 +26,7 @@
        <div class="swiper-button-next" slot="button-next"></div>
        <div class="swiper-scrollbar"   slot="scrollbar"></div>
      </swiper>
+     <h3 class="time">重要事件纪实录</h3>
      <ul class="intro intro1">
        <li class="icon-data">2014年攻读硕士</li>
        <li class="icon-data">2014年努力学习</li>
@@ -102,7 +103,6 @@
               }
               activeIndex = activeIndex - 2;
               list[activeIndex].style.display = "block";
-              console.log('this is current swiper instance object', this.activeIndex);
             }
           },
           coverflowEffect: {
@@ -133,7 +133,20 @@
     padding 10px 0 0 0
     img
       width 150px
-      height 200px
+      height 100px
+    .time
+      line-height: 20px;
+      margin: 20px 14%;
+      border-bottom: 2px dotted rgba(0,0,0,0.3);
+      font-size: 16px;
+      margin-bottom: 20px;
+      background: #a8cc76;
+      padding: 10px 0;
+      width: 200px;
+      text-align: center;
+      border-radius: 0px 30px 30px 0;
+      box-shadow: #21566f 1px 1px 1px;
+      border-left: #dae1e4 6px solid;
     .intro
       width 100%
       padding 10px
@@ -141,7 +154,7 @@
       display none
       li
        margin-top 10px
-       margin-left 25%
+       margin-left 17%
     .intro1
       display block
 

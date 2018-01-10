@@ -15,79 +15,95 @@ import mind from 'components/mind/mind'
 Vue.use(Router)
 
 export default new Router({
-  mode:"history",
-  base:"/dist/",
   routes: [
     {
       path: '/',
-      redirect:'web'
+      redirect:'web',
+      meta: { keepAlive: true }
     },
     {
       path: '/web',
       component: web,
+      meta: { keepAlive: true },
       children:[{
         path:':id',
-        component:article
+        component:article,
+        meta: { keepAlive: true },
       }]
     },
     {
       path: '/aboutme',
-      component: aboutme
+      component: aboutme,
+      meta: { keepAlive: true }
     },
     {
       path: '/life',
-      component: life
+      component: life,
+      meta: { keepAlive: true }
     },
     {
       path: '/talk',
-      component: talk
+      component: talk,
+      meta: { keepAlive: true }
     },
     {
       path: '/js',
       component: js,
+      meta: { keepAlive: true },
       children:[{
         path:':id',
-        component:article
+        component:article,
+        meta: { keepAlive: true },
       }]
     },
     {
       path: '/project',
       component: project,
+      meta: { keepAlive: true },
       children:[{
         path:':id',
-        component:article
+        component:article,
+        meta: { keepAlive: true },
       }]
     },
     {
       path: '/vue',
       component: vue,
+      meta: { keepAlive: true },
       children:[{
         path:':id',
-        component:article
+        component:article,
+        meta: { keepAlive: true },
       }]
     },
     {
       path: '/angular',
       component: angular,
+      meta: { keepAlive: true },
       children:[{
         path:':id',
-        component:article
+        component:article,
+        meta: { keepAlive: true },
       }]
     },
     {
       path: '/webPro',
       component: webPro,
+      meta: { keepAlive: true },
       children:[{
         path:':id',
-        component:article
+        component:article,
+        meta: { keepAlive: true },
       }]
     },
     {
       path: '/mind',
       component: mind,
+      meta: { keepAlive: true },
       children:[{
         path:':id',
-        component:article
+        component:article,
+        meta: { keepAlive: true },
       }]
     }
   ]

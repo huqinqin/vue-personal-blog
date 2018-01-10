@@ -1,7 +1,9 @@
 <template>
      <div class="web">
        <Listview :articleLis="articleLis" @openNewpage="openNewpage"></Listview>
-       <router-view :article="article"></router-view>
+       <keep-alive>
+         <router-view :article="article" v-if="$route.meta.keepAlive"></router-view>
+       </keep-alive>
      </div>
 </template>
 <script type="text/ecmascript-6">
@@ -11,7 +13,7 @@
       data(){
           return{
               articleLis:[],
-              article:[]
+              article:{}
           }
       },
      props:{
@@ -37,13 +39,13 @@
        openNewpage(index){
          this.article = this.articleLis[index];
          this.$router.push({
-             path:`/${this.type}/${this.article.index}`
+             path:`/${this.type}/${index}`
            });
          return this.article;
        }
      },
-     mounted(){
-      this._getWebDate();
+     created(){
+        this._getWebDate();
     },
      components:{
        Listview
@@ -53,41 +55,8 @@
 <style lang="stylus" rel="stylesheet/stylus">
   @import '../../common/stylus/style.css'
    .web
-     height 500px
-     width 100%
-     .webBox
-       background-color #cae4ce
-       padding 10px
-       .webWrapper
-         display flex
-         align-items center
-         display flex
-         margin-top 5px
-        .left
-          flex 0 0 60px
-          width 60px
-          height 60px
-          img
-            width 100%
-            height 100%
-            vertical-align middle
-        .right
-          flex 1
-          display flex
-          align-items center
-          justify-content center
-          margin-left 10px
-          text-align left
-          flex-direction column
-          p
-           width 100%
-           font-size 14px
-           &.title
-           &.intro
-            margin-top 5px
-           &.time
-            font-size 12px
-            margin-top 5px
-            .rate
-              margin-left 10px
+     position: fixed
+     width: 100%
+     top: 100px
+     bottom: 0
 </style>

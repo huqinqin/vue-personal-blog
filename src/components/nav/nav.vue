@@ -8,10 +8,10 @@
          <router-link to="/aboutme">简介</router-link>
        </li>
        <li class="life">
-         <router-link to="/life">生活</router-link>
+         <router-link to="/life">鸡汤</router-link>
        </li>
        <li class="talk">
-         <router-link to="/talk">留言</router-link>
+         <router-link to="/talk">精选留言</router-link>
        </li>
      </ul>
    </div>
@@ -22,7 +22,6 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .navSty
     position relative
-    z-index 1
     display flex
     height 30px
     line-height 30px
@@ -30,7 +29,6 @@
     li
       text-align center
       flex 1
-
       box-sizing border-box
       a
        color #333
